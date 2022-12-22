@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { Container } from './components/Container/Container'
+import { InputContainer } from './components/InputContainer/InputContainer';
+import { ContainerOfProducts } from './components/ContainerOfProducts/ContainerOfProducts';
+import { drinks } from './drinksDataBase';
+import { DrinkContainer } from './components/DrinkContainer/DrinkContainer';
+import { NavBar } from './components/NavBar/NavBar';
 
 function App() {
+  const [listOfProducts, setlistOfProducts] = useState([])
+  const listOfDrinks = drinks;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <NavBar />
+      <InputContainer setlistOfProducts={setlistOfProducts} listOfProducts={listOfProducts} />
+      <ContainerOfProducts listOfProducts={listOfProducts} />
+      <DrinkContainer listOfDrinks={listOfDrinks} listOfProducts={listOfProducts} />
+    </Container>
   );
 }
 

@@ -6,7 +6,7 @@ export const DrinkCard = styled.div`
   border: 1px solid white;
   border-radius: 5px;
   width: 30%;
-  margin: 20px 20px;
+  margin: 10px 10px;
 `
 
 export const NameContainer = styled.div`
@@ -14,11 +14,9 @@ export const NameContainer = styled.div`
 `
 
 export const IngredientsContainer = styled.div`
-  border: 1px solid black;
   margin-bottom: 10px;
 `
 export const PriceContainer = styled.div`
-  border: 1px solid black;
   margin-bottom: 10px;
 `
 export const NameText = styled.h1`
@@ -26,4 +24,15 @@ export const NameText = styled.h1`
   font-family: 'Raleway', sans-serif;
   color: white;
   margin-left: 5px;
+`
+
+export const IngredientsText = styled.div`
+  font-size: 15px;
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  margin-left: 5px;
+`
+
+export const List = styled.ul`
+  list-style: square;
 `

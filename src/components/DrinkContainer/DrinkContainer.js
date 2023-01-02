@@ -9,7 +9,7 @@ export const DrinkContainer = ({ listOfDrinks, listOfProducts }) => {
         return singleIngredients;
       }
     });
-    if (filteredIngredients.length > 0) {
+    if (filteredIngredients.length > ingredients.length * 0.3) {
       return eachObject;
     }
   });
@@ -17,7 +17,12 @@ export const DrinkContainer = ({ listOfDrinks, listOfProducts }) => {
   return (
     <S.DrinkContainer>
       {drinksWithAvailableIngredients.map((drink) => (
-        <DrinkCard name={drink.name} ingredients={drink.ingredients} price={drink.price} key={drink.name} />
+        <DrinkCard
+          name={drink.name}
+          ingredients={drink.ingredients}
+          price={drink.price}
+          key={drink.name}
+        />
       ))}
     </S.DrinkContainer>
   );

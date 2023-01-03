@@ -8,6 +8,9 @@ export const DrinkCard = styled.div`
   width: 30%;
   margin: 10px 10px;
   justify-content: space-between;
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 export const NameContainer = styled.div`

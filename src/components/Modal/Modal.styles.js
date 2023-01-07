@@ -14,11 +14,12 @@ export const Modal = styled.div`
 `;
 
 export const ModalBody = styled.div`
+  margin-top: 30px;
   position: fixed;
   background-color: #fff;
-  width: 500px;
-  height: 300px;
-  //overflow: auto;
+  min-width: 500px;
+  min-height: 300px;
+  cursor: default;
 `;
 
 export const ModalHeader = styled.h1`
@@ -27,6 +28,7 @@ export const ModalHeader = styled.h1`
 
 export const ReceipeDescription = styled.p`
   color: green;
+  display: flex;
 `;
 
 export const ButtonClose = styled.button`

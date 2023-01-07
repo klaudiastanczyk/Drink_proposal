@@ -1,15 +1,19 @@
 import * as S from "./Modal.styles";
 
-export const Modal = ({ show, onClose }) => {
-
+export const Modal = ({ show, onClose, wykonanie }) => {
   if (!show) {
     return null;
   } else
     return (
-      <S.Modal>
-        <S.ModalBody>
+      <S.Modal
+        onClick={(e) => {
+          e.stopPropagation();
+          onClose();
+        }}
+      >
+        <S.ModalBody onClick={(e) => {e.stopPropagation()}}>
           <S.ModalHeader>Wykonanie:</S.ModalHeader>
-          <S.ReceipeDescription>Opis wykonania</S.ReceipeDescription>
+          <S.ReceipeDescription>{wykonanie}</S.ReceipeDescription>
         </S.ModalBody>
         <S.ButtonClose
           onClick={(e) => {
@@ -17,7 +21,7 @@ export const Modal = ({ show, onClose }) => {
             onClose();
           }}
         >
-          Close the window and enjoy your drink!
+          Close
         </S.ButtonClose>
       </S.Modal>
     );

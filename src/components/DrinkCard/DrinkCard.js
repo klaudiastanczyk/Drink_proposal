@@ -2,7 +2,7 @@ import * as S from "./DrinkCard.styles";
 import { useState } from "react";
 import { Modal } from "../Modal/Modal";
 
-export const DrinkCard = ({ name, ingredients, price }) => {
+export const DrinkCard = ({ name, ingredients, price, wykonanie }) => {
   const [showReceipe, setShowReceipe] = useState(false);
 
   return (
@@ -22,7 +22,7 @@ export const DrinkCard = ({ name, ingredients, price }) => {
       <S.PriceContainer>
         <S.PriceText>{price}$</S.PriceText>
       </S.PriceContainer>
-      <Modal show={showReceipe} onClose={() => setShowReceipe(false)}></Modal>
+      <Modal show={showReceipe} onClose={() => setShowReceipe(false)} wykonanie={wykonanie}></Modal>
     </S.DrinkCard>
   );
 };

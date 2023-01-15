@@ -13,7 +13,11 @@ export const InputContainer = ({setlistOfProducts, listOfProducts}) => {
 
   return (
     <S.InputContainer>
-      <S.Input placeholder="Enter your ingredients" value={value} onChange={(e) => {
+      <S.Input onKeyUp={(e) => {
+        if(e.key ==="Enter"){
+          addProduct()
+        }
+      }} placeholder="Enter your ingredients" value={value} onChange={(e) => {
         setValue(e.target.value)
       }}></S.Input>
       <S.Button onClick={() => {

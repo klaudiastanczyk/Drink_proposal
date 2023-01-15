@@ -5,6 +5,7 @@ import { Modal } from "../Modal/Modal";
 export const DrinkCard = ({ name, ingredients, price, wykonanie }) => {
   const [showReceipe, setShowReceipe] = useState(false);
 
+
   return (
     <S.DrinkCard onClick={() => setShowReceipe(true)}>
       <S.NameContainer>
@@ -22,7 +23,7 @@ export const DrinkCard = ({ name, ingredients, price, wykonanie }) => {
       <S.PriceContainer>
         <S.PriceText>{price}$</S.PriceText>
       </S.PriceContainer>
-      <Modal show={showReceipe} onClose={() => setShowReceipe(false)} wykonanie={wykonanie}></Modal>
+      <Modal show={showReceipe} onClose={() => setShowReceipe(false)} wykonanie={wykonanie} name={name}></Modal>
     </S.DrinkCard>
   );
 };
